@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web-service:
+    build: web-service/
+    restart: unless-stopped
+
+  reverse-proxy:
+    build: reverse-proxy/
+    restart: unless-stopped
+    ports:
+      - "8080:80"
